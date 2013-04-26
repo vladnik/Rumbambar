@@ -1,0 +1,4 @@
+= Rumbambar
+Rumbambar is an evented Ruby on Rails engine for multiple servers administration, deployment and analytics
+
+{<img src="https://gemnasium.com/vladnik/Rumbambar.png" alt="Dependency Status" />}[https://gemnasium.com/vladnik/Rumbambar]
