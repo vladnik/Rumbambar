@@ -1,4 +1,3 @@
 Rails.application.routes.draw do
-
-  mount Rumbambar::Engine => "/rumbambar"
+  mount Rumbambar::Engine => '/rumba'
 end
