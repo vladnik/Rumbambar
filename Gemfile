@@ -5,6 +5,10 @@ source "http://rubygems.org"
 # development dependencies will be added by default to the :development group.
 gemspec
 
+group :test do
+  gem 'coveralls', require: false
+end
+
 # jquery-rails is used by the dummy application
 # gem "jquery-rails"
 
