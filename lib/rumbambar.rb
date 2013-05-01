@@ -1,4 +1,5 @@
-require "rumbambar/engine"
+require 'rumbambar/engine'
+require 'devise'
 
 module Rumbambar
 end

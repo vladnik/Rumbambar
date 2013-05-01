@@ -1,9 +1,9 @@
 PATH
   remote: .
   specs:
-    Rumbambar (0.0.1)
-      devise
-      jquery-rails
+    rumbambar (0.0.1)
+      devise (>= 2.2.3)
+      jquery-rails (>= 2.2.1)
       rails (~> 3.2.13)
 
 GEM
@@ -116,6 +116,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  Rumbambar!
   rspec-rails
+  rumbambar!
   sqlite3
