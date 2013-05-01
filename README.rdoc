@@ -2,3 +2,4 @@
 Rumbambar is an evented Ruby on Rails engine for multiple servers administration, deployment and analytics
 
 {<img src="https://gemnasium.com/vladnik/Rumbambar.png" alt="Dependency Status" />}[https://gemnasium.com/vladnik/Rumbambar]
+{<img src="https://travis-ci.org/vladnik/Rumbambar.png?branch=master" alt="Build Status" />}[https://travis-ci.org/vladnik/Rumbambar]
