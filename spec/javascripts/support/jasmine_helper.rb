@@ -5,4 +5,5 @@
 #Example: using a different boot file.
 Jasmine.configure do |config|
   config.browser = 'phantomjs'
+  config.spec_path = 'assets'
 end
