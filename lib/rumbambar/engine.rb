@@ -6,5 +6,8 @@ module Rumbambar
       g.test_framework :rspec
       g.integration_tool :rspec
     end
+    config.to_prepare do
+      Devise::SessionsController.layout 'rumbambar/login'
+    end
   end
 end
