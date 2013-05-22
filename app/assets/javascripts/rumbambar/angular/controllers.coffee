@@ -1,7 +1,7 @@
 'use strict'
 
 # Controllers
-angular.module('myApp.controllers', []).
+angular.module('rumba.controllers', []).
 controller('MyCtrl1', [ ()->
   # some code
 ]).

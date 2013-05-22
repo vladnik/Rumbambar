@@ -63,6 +63,9 @@ module Dummy
 
     # Asset path for specs
     config.assets.paths << Rails.root.join('../javascripts')
+
+    # Allow concurrency
+    config.threadsafe!
   end
 end
 
