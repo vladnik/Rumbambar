@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     rumbambar (0.0.1)
-      coffee-rails (~> 3.2.1)
+      coffee-rails
       devise (>= 2.2.3)
       jquery-rails (>= 2.2.1)
       rails (~> 3.2.13)
