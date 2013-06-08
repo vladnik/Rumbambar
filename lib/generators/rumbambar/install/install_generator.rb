@@ -9,6 +9,8 @@ class Rumbambar::InstallGenerator < Rails::Generators::Base
     generate('devise:install')
     rake('rumbambar:install:migrations')
     copy_file 'rumba_user.rb', 'app/models/rumba_user.rb'
+    copy_file 'rumbambar.js', 'app/assets/javascripts/rumbambar.js'
+    copy_file 'rumbambar.css', 'app/assets/stylesheets/rumbambar.css'
   end
 
   def create_first_user
