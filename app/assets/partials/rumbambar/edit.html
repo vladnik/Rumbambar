@@ -1,0 +1,5 @@
+<div ng-repeat="attr in edit_attrs">
+  {{attr | titleize}}: <input type="text" name={{attr}} ng-model="model[attr]" required>
+</div>
+<button class="btn btn-primary" ng-click="save()">Save</button>
+<a ng-href="{{url}}" class="btn">Cancel</a>

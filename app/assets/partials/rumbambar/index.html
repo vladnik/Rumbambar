@@ -1,0 +1,14 @@
+<table class="table table-hover table-bordered">
+  <tr>
+    <th ng-repeat="attr in attrs">{{attr | titleize}}</th>
+    <th>Actions</th>
+  </tr>
+  <tr ng-repeat="model in collection">
+    <td ng-repeat="attr in attrs">{{model[attr]}}</td>
+    <td>
+      <a ng-href="{{url}}/{{model.id}}">View</a>
+      <a ng-href="{{url}}/{{model.id}}/edit">Edit</a>
+      <a ng-click="remove($index)">Delete</a>
+    </td>
+  </tr>
+</table>

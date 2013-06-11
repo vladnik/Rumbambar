@@ -21,17 +21,32 @@ GO AFTER THE REQUIRES BELOW.
 
 # Application Helpers
 
-@asset_path = (name)->
-  rumba_init.asset_path + name
-
-@rumba_path = (name)->
-  rumba_init.namespace + name.toSnake()
+@Rumba ||= {}
+asset_path = namespace = ''
+# Asset path
+@Rumba.asset_path = (name)->
+  asset_path + name
+  # Namespace path
+@Rumba.path = (name)->
+  namespace + name.toSnake()
 
 String.prototype.toSnake = ->
-    # Lowercase first character
-    string = this.charAt(0).toLowerCase() + this.slice(1)
-    string.replace(/([A-Z])/g, '_$1').toLowerCase()
+  # Lowercase first character
+  string = this.charAt(0).toLowerCase() + this.slice(1)
+  string.replace(/([A-Z])/g, '_$1').toLowerCase()
 
 String.prototype.toTitle = ->
   input = this.toSnake()
   (word.charAt(0).toUpperCase() + word.slice(1) for word in input.split('_')).join(' ')
+
+# Define models, controllers and model for resource
+@Rumba.add_resource = (resource)->
+  @add_resource_model(resource.name)
+  @add_resource_controllers(resource)
+  @add_resource_routes(resource.name)
+
+@Rumba.init = (config)->
+  asset_path = config.asset_path
+  namespace = config.namespace
+  # Add resource for each model
+  @add_resource(model) for model in config.models

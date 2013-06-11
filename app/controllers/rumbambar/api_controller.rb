@@ -2,19 +2,19 @@ module Rumbambar
   class ApiController < Rumbambar::ApplicationController
 
     def index
-      head :ok
+      render json: [{id: 1, name: 'Name'}]
     end
   
     def show
-      head :ok
+      render json: {id: 1, name: 'Name'}
     end
   
     def create
-      head :ok
+      render json: {id: 1}
     end
   
     def update
-      head :ok
+      render json: {id: 1}
     end
   
     def delete

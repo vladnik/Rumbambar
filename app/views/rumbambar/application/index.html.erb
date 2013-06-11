@@ -1,24 +1,13 @@
 <div id="main_page" class="container">
   <div class="navbar">
     <div class="navbar-inner">
-      <a class="brand" href="#">Rumbambar</a>
-      <ul class="nav">
-        <li><a href="#">Dashboard</a></li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-            Other<b class="caret"></b>
-          </a>
-          <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-            <li><a href="#">Stuff</a></li>
-          </ul>
+      <a class="brand" href="<%= @init_data[:namespace] %>">Rumbambar</a>
+      <ul class="nav" ng-controller="NavCtrl">
+        <li  ng-class="status(model.url)" ng-repeat="model in collection">
+          <a ng-href="{{model.url}}">{{model.name}}</a>
         </li>
       </ul>
     </div>
   </div>
-
-  <ul class="menu">
-    <li><a href="#/view1">view1</a></li>
-    <li><a href="#/view2">view2</a></li>
-  </ul>
   <div ng-view></div>
 </div>

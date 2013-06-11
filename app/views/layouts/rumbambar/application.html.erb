@@ -10,5 +10,9 @@
 <%= yield %>
 
 <%= javascript_include_tag 'rumbambar' %>
+
+<%= javascript_tag do -%>
+  Rumba.init(<%= raw @init_data.to_json %>);
+<% end -%>
 </body>
 </html>
