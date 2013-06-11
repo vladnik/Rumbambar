@@ -1,7 +1,36 @@
 = Rumbambar
-Rumbambar is an evented Ruby on Rails engine for multiple servers administration, deployment and analytics
+Rumbambar is a Ruby on Rails engine for building single-page applications with Devise authentication and AngularJS powered UI.
 
 {<img src="https://gemnasium.com/vladnik/Rumbambar.png" alt="Dependency Status" />}[https://gemnasium.com/vladnik/Rumbambar]
 {<img src="https://travis-ci.org/vladnik/Rumbambar.png?branch=master" alt="Build Status" />}[https://travis-ci.org/vladnik/Rumbambar]
 {<img src="https://codeclimate.com/github/vladnik/Rumbambar.png" />}[https://codeclimate.com/github/vladnik/Rumbambar]
 {<img src="https://coveralls.io/repos/vladnik/Rumbambar/badge.png?branch=master" alt="Coverage Status" />}[https://coveralls.io/r/vladnik/Rumbambar]
+
+== Installation
+
+=== <b>Installation instruction are not valid until gem is released</b>
+
+Add this line to your application's Gemfile:
+
+    gem 'rumbambar'
+
+And then execute:
+
+    $ bundle
+
+Run rumbambar generator:
+
+    $ rails g rumbambar:install
+
+Provide default user credentials, migrate and seed DB:
+    
+    $ rake db:migrate
+    $ rake db:seed
+
+Rumbambar panel will be available here by default:
+    
+    http://127.0.0.1:3000/rumba
+    
+== Usage
+
+Usage description, DSL desciption and applications building manual will be provided later
