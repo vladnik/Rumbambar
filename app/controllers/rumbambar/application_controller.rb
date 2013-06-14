@@ -8,8 +8,8 @@ module Rumbambar
         namespace: '/rumba/',
         models: [
           {
-            name: "Model",
-            attrs: ["id", "name"]
+            name: 'Model',
+            attrs: ['id','name']
           }
         ]
       }

@@ -1,16 +1,16 @@
 'use strict'
-
 @Rumba ||= {}
 
-# Services 
-
-# Demonstrate how to register services
-# In this case it is a simple value service.
+# Services
 services = angular.module('rumba.services', ['ngResource'])
+
+# Store all models
+@Rumba.models = []
 
 # Add model
 @Rumba.add_model = (name, object)->
   services.factory(name, object)
+  @models.push(name)
 
 # Add Resource model
 @Rumba.add_resource_model = (name)->

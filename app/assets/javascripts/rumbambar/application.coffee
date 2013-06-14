@@ -20,15 +20,7 @@ GO AFTER THE REQUIRES BELOW.
 ###
 
 # Application Helpers
-
 @Rumba ||= {}
-asset_path = namespace = ''
-# Asset path
-@Rumba.asset_path = (name)->
-  asset_path + name
-  # Namespace path
-@Rumba.path = (name)->
-  namespace + name.toSnake()
 
 String.prototype.toSnake = ->
   # Lowercase first character
@@ -39,14 +31,13 @@ String.prototype.toTitle = ->
   input = this.toSnake()
   (word.charAt(0).toUpperCase() + word.slice(1) for word in input.split('_')).join(' ')
 
-# Define models, controllers and model for resource
-@Rumba.add_resource = (resource)->
-  @add_resource_model(resource.name)
-  @add_resource_controllers(resource)
-  @add_resource_routes(resource.name)
-
 @Rumba.init = (config)->
-  asset_path = config.asset_path
-  namespace = config.namespace
-  # Add resource for each model
-  @add_resource(model) for model in config.models
+  @asset_path = (name)->
+    config.asset_path + name
+  @path = (name)->
+    config.namespace + name.toSnake()
+  for model in config.models
+    @add_resource_model(model.name)
+    @add_resource_controllers(model)
+    @add_resource_routes(model.name)
+  return this

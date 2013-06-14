@@ -1,16 +1,12 @@
 'use strict'
-
 @Rumba ||= {}
-routes = []
 
 # Declare app level module which depends on filters, and services
-angular.module('rumba', ['rumba.filters', 'rumba.services', 'rumba.directives', 'rumba.controllers'])
+application = angular.module('rumba', ['rumba.filters', 'rumba.services', 'rumba.directives', 'rumba.controllers'])
   .config(['$routeProvider', ($routeProvider) ->
-    # Add routes
-    for route in routes
-      $routeProvider.when route.path,
-        templateUrl: route.template
-        controller: route.controller
+#    $routeProvider.when '/rumba',
+#      templateUrl: 'assets/rumbambar/dashboard.html'
+#      controller: 'DashboardCtrl'
     $routeProvider.otherwise redirectTo: '/rumba'
   ])
   .config(['$locationProvider',($locationProvider) ->
@@ -18,7 +14,11 @@ angular.module('rumba', ['rumba.filters', 'rumba.services', 'rumba.directives', 
   ])
 
 @Rumba.add_route = (route) ->
-  routes.push(route)
+  application.config(['$routeProvider', ($routeProvider) ->
+    $routeProvider.when route.path,
+      templateUrl: route.template
+      controller: route.controller
+  ])
 
 @Rumba.add_resource_routes = (name)->
   detailCtrl = name + 'DetailCtrl'

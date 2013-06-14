@@ -1,8 +1,8 @@
 <div id="main_page" class="container">
   <div class="navbar">
-    <div class="navbar-inner">
-      <a class="brand" href="<%= @init_data[:namespace] %>">Rumbambar</a>
-      <ul class="nav" ng-controller="NavCtrl">
+    <div class="navbar-inner" ng-controller="NavCtrl">
+      <a class="brand" ng-href="{{root}}">Rumbambar</a>
+      <ul class="nav">
         <li  ng-class="status(model.url)" ng-repeat="model in collection">
           <a ng-href="{{model.url}}">{{model.name}}</a>
         </li>
